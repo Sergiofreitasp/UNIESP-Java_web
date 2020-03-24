@@ -2,6 +2,7 @@ package br.com.projeto.empresa.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,16 @@ public class EmpresaController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String email = request.getParameter("email");
+		String senha = request.getParameter("senha");
 		
+		if(email.equals("me@me.com") && senha.equals("1234")) {
+			request.setAttribute("email", email);
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			rd.forward(request, response);
+		}else {
+			response.sendRedirect("login.jsp");
+		}
 //		String nome = 
 //		String email = 
 //		String cnpj = 

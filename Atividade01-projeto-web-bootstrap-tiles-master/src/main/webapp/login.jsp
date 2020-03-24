@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding= "UTF-8" %>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -34,29 +36,45 @@
   </head>
   
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" method="post" action="EmpresaController" >
 		  <h1 class="h3 mb-3 font-weight-normal">Login</h1>
 		  <label for="email" class="sr-only">Email</label>
-		  <input type="email" id="email" class="form-control" placeholder="login" required autofocus>
+		  <input name="email" type="email" id="email" class="form-control" placeholder="login" required autofocus>
 		    <br/>
 		  <label for="senha" class="sr-only">Senha</label>
-		  <input type="password" id="senha" class="form-control" placeholder="Senha" required>
+		  <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" required>
 		  
-		  <a href="${pageContext.request.contextPath}/" onclick="valida()" class="btn btn-lg btn-primary btn-block" type="submit">Logar</a>
+		  <a href="${pageContext.request.contextPath}/"  class="btn btn-lg btn-primary btn-block" type="submit">Logar</a>
+		  <!-- onclick="valida()" -->
 		  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
 	</form>
+	
+	
+	
+	<script>
+		/*const valida = () => {
+			event.preventDefault();
+		    let email = document.getElementById("email").value;
+		    let senha = document.getElementById("senha").value;
+		    
+		    if(email === '' && senha === ''){
+			    alert('Campos obrigat√≥rios n√£o preenchidos!');
+			    window.history.back('http://localhost:8080/agenda-acme/login.jsp');
+		    }
+		    if(email === 'me@me.com' && senha === '1234'){
+			    
+			    window.location.href ='http://localhost:8080/agenda-acme/index.jsp';
+		    }
+		    else{
+		    	alert('Campos invalidos!');
+			    window.history.back('http://localhost:8080/agenda-acme/login.jsp');
+		    }
+		  }*/
+  
+	</script>
+	
 </body>
 
-<script>
-const valida = () => {
-    let email = document.getElementById("email").value;
-    let senha = document.getElementById("senha").value;
-    if(email === 'me@me.com' && senha === '1234'){
-	    alert('Campos obrigatÛrios n„o preenchidos!');
-	    window.history.back('http://localhost:8080/agenda-acme/login.jsp');
-    }
-  }
-</script>
 
 </html>
 
